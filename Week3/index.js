@@ -12,13 +12,13 @@ var EmpSalary= 50000
 
 EmployeeInfo(EmpName,EmpSalary);
 
-const EmpSkills= (skills,Name,LabGrp) => {
-   console.log("Hi "+ Name + "Expert in " + skills)
-   console.log("Lab Group Number is ",LabGrp)
-
+const EmpSkills= (skills,Name,LabGrp)=> {
+console.log(" Student ID"+ Name+ "Expert in "+ skills)
+console.log("Lab Group Name",LabGrp)
 }
-EmpSkills(" java , Python, c++","Thanusri","09")
+   EmpSkills("java, C++, Python","3044008 "," Group 9")
 
+   
 const student= require('./StudentInfo')
 const person = require('./Person')
 // because getName is the function so we use ()
@@ -28,7 +28,7 @@ console.log(student.dob)
 // because dob is a variable so we do nt use ()
 console.log(student.Studentgrade())
 console.log("grade is "+student.Studentgrade(55) )
-person1= new person("Sathwika","Australia","marampallysathwika@gmail.com")
+person1= new person("Sathwika","India","marampallysathwika@gmail.com")
 console.log("using Person Module",person1.getPersonInfo())
 console.log("Programe ended")
 
