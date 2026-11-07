@@ -10,12 +10,14 @@ app.get('/', (req, res) => {
 });
 // Start server
 const PORT = 5000;
+
 app.get('/about', function (req, res) {
  res.send('This is a basic Express application');
 });
 app.get('/users/:userId/books/:bookId', function (req, res) {
  res.send(req.params);
 });
+
 app.get('/GetStudents', (req, res) => {
  fs.readFile('./Students.json', 'utf8', (err, data) => {
  if (err) {
@@ -44,6 +46,7 @@ app.get('/GetStudent/:id', (req, res) => {
  status: false,
  statusCode: 500,
  message: "Error reading Students.json"
+
  });
  }
  const students = JSON.parse(data);
@@ -64,12 +67,13 @@ app.get('/GetStudent/:id', (req, res) => {
  });
 });
 
+// showing html form
 app.get('/studentinfo', (req, res) => {
  res.sendFile('StudentInfo.html', { root: __dirname });
 });
 app.post('/submit-data', (req, res) => {
  const name = req.body.firstName + ' ' + req.body.lastName;
- const age = req.body.myAge;
+ const age = req.body.myAge
  const Gender = ' Gender: ' + req.body.gender;
  const qual = 'Qualification: ' + req.body.Qual;
  console.log(req.body.Qual);
@@ -83,9 +87,7 @@ app.post('/submit-data', (req, res) => {
  qualification: qual
  }
  });
-});
-
+})
 app.listen(PORT, () => {
  console.log(`Server is running on port ${PORT}`);
 });
-
